@@ -37,7 +37,7 @@ This project is a Codex skill definition, not an executable application. Tests w
 | D-02 | Output block order | Bill text first, collection text second, total payment text third | Pass |
 | D-03 | Scene labels | Do not output labels such as "bill text", "collection text", or "total payment text" | Pass |
 | D-04 | Money format | All output money values keep 2 decimal places | Pass |
-| D-05 | Total payment | Third block equals the sum of all receivable amounts in the second block | Pass |
+| D-05 | Total payment | Third block uses `总付款额：金额元` and equals the sum of all receivable amounts in the second block | Pass |
 | D-06 | Empty receivable edge case | Output `无应收款：0.00元` in the second block and `总付款额：0.00元` in the third block | Pass |
 | D-07 | Line ending style | In each block, every non-final line ends with ` \|` | Pass |
 
@@ -45,6 +45,7 @@ This project is a Codex skill definition, not an executable application. Tests w
 
 - Added a global output-money rule: all output amounts must keep 2 decimal places.
 - Added a no-receivable fallback: if every registration type has receivable amount 0, output `无应收款：0.00元`.
+- Fixed the total-payment block format as `总付款额：金额元`.
 
 ## Result
 
